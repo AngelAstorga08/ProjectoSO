@@ -1,0 +1,23 @@
+﻿@page
+@model ProjectoSO.Pages.Product.CreateModel
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Create Product</h2>
+
+@if (TempData["Message"] != null)
+{
+    <script>
+        alert('@TempData["Message"]');
+    </script>
+}
+<form method="post">
+    <div>
+        <label asp-for="Product.Name"></label>
+        <input asp-for="Product.Name" class="form-control"/>
+        <span asp-validation-for="Product.Name"></span>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-outline-success">Create</button>
+    </div>
+</form>
